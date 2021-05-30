@@ -8,7 +8,7 @@ RUN npm install
 
 COPY /server .
 
-RUN npm install pm2
+RUN npm install pm2 -g
 
 EXPOSE 3000
 
