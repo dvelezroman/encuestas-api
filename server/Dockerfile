@@ -8,6 +8,8 @@ RUN npm install
 
 COPY /server .
 
+RUN npm install pm2
+
 EXPOSE 3000
 
-CMD ["npm", "start"]
+CMD ["npm", "prod"]
