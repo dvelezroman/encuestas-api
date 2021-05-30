@@ -1,13 +1,15 @@
-require('dotenv').config({ path: '../.env' })
+require('dotenv').config()
 
 const express = require('express')
 const app = express()
-const db = require('./models')
-const initRoutes = require('./routes/tutorial.routes')
+const db = require('./src/models')
+const testRoutes = require('./src/routes/test.routes')
+const initRoutes = require('./src/routes/tutorial.routes')
 
 const PORT = process.env.PORT || 3000
 
 app.use(express.urlencoded({ extended: true }))
+testRoutes(app)
 initRoutes(app)
 
 db.sequelize.sync()
