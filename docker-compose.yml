@@ -1,6 +1,15 @@
 version: '3.8'
 
 services:
+    web:
+        image: encuestas-web-image
+        container_name: encuestas-web
+        build:
+            context: .
+            dockerfile: ./web/Dockerfile
+        ports:
+            - "80:80"
+
     server:
         build: 
             context: .
